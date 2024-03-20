@@ -15,9 +15,6 @@ export default class Cart {
         return this.totalPrice() * (1 - discount / 100)
     }
     removeItem(id: number) {
-        const index = this._items.findIndex(item => item.id === id);
-        if (index != -1) {
-            this._items.splice(index, 1);
-        }
+        this._items = this._items.filter(item => item.id != id);
     }
 }
